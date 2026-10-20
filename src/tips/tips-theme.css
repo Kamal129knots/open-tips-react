@@ -1,0 +1,129 @@
+/* =========================================================
+   129Knots theme for Driver.js feature tips
+   Navy card with a fine border in the logo colours,
+   knot mark + label, OPEN's standard primary button.
+   ========================================================= */
+:root {
+  --k-red: #e5484d;
+  --k-green: #30a46c;
+  --k-indigo: #5b6cf0;
+  --k-violet: #7c3aed;
+  --k-primary: #2f6ff0;        /* OPEN primary button; change here if the design system changes */
+  --k-primary-hover: #4a82f5;
+  --k-navy: #0e1631;
+  --k-navy-line: #2a3866;
+  --k-brand-gradient: linear-gradient(90deg, var(--k-red), var(--k-green), var(--k-indigo), var(--k-violet));
+}
+
+/* ---------- Card ---------- */
+.ok-tip.driver-popover {
+  min-width: 280px;
+  max-width: 330px;
+  padding: 16px 18px 14px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  color: #e7ecf6;
+  font-family: "Lexend", "Segoe UI", system-ui, sans-serif;
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgba(91, 108, 240, .2), transparent 55%) padding-box,
+    radial-gradient(90% 70% at 0% 100%, rgba(124, 58, 237, .12), transparent 60%) padding-box,
+    linear-gradient(var(--k-navy), var(--k-navy)) padding-box,
+    linear-gradient(135deg, rgba(229, 72, 77, .8), rgba(48, 164, 108, .8) 35%, rgba(91, 108, 240, .95) 65%, rgba(124, 58, 237, .95)) border-box;
+  box-shadow: 0 20px 50px rgba(6, 10, 30, .55), 0 6px 24px rgba(91, 108, 240, .2);
+}
+
+/* Header: knot mark + label */
+.ok-eyebrow { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.ok-eyebrow .ok-knot { flex: none; }
+.ok-eyebrow-label {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #b4bdff;
+  background: rgba(91, 108, 240, .16);
+  border: 1px solid rgba(91, 108, 240, .3);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+/* "New in OPEN": green label only; the button stays the standard primary */
+.ok-tip-new .ok-eyebrow-label {
+  color: #7ee2b0;
+  background: rgba(48, 164, 108, .14);
+  border-color: rgba(48, 164, 108, .35);
+}
+
+.ok-tip .driver-popover-title {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -.01em;
+  color: #fff;
+}
+.ok-tip .driver-popover-description {
+  margin-top: 6px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #b8c3dd;
+}
+
+/* Arrow in the card colour */
+.ok-tip .driver-popover-arrow { border-color: var(--k-navy); border-width: 7px; }
+.ok-tip .driver-popover-arrow-side-left { border-top-color: transparent; border-bottom-color: transparent; border-right-color: transparent; }
+.ok-tip .driver-popover-arrow-side-right { border-top-color: transparent; border-bottom-color: transparent; border-left-color: transparent; }
+.ok-tip .driver-popover-arrow-side-top { border-bottom-color: transparent; border-left-color: transparent; border-right-color: transparent; }
+.ok-tip .driver-popover-arrow-side-bottom { border-top-color: transparent; border-left-color: transparent; border-right-color: transparent; }
+
+/* ---------- Footer: Dismiss · dots · Next ---------- */
+.ok-tip .driver-popover-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  gap: 12px;
+}
+.ok-tip .driver-popover-navigation-btns { flex-grow: 0; }
+
+.ok-dismiss {
+  all: unset;
+  margin-right: auto;
+  cursor: pointer;
+  font-size: 12px;
+  color: #8f9bba;
+  transition: color .15s;
+}
+.ok-dismiss:hover,
+.ok-dismiss:focus-visible { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+.ok-progress { display: flex; gap: 5px; align-items: center; }
+.ok-progress i {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255, 255, 255, .18);
+  transition: width .2s, background .2s;
+}
+.ok-progress i.done { background: rgba(47, 111, 240, .55); }
+.ok-progress i.on { width: 16px; border-radius: 3px; background: var(--k-primary); }
+
+/* Standard primary button, same shape as OPEN's buttons */
+.ok-tip .driver-popover-footer-btn {
+  background: var(--k-primary);
+  color: #fff;
+  border: 0;
+  border-radius: 7px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  text-shadow: none;
+  transition: background .15s;
+}
+.ok-tip .driver-popover-footer-btn:hover,
+.ok-tip .driver-popover-footer-btn:focus { background: var(--k-primary-hover); }
+.ok-tip .driver-popover-footer-btn:focus-visible { outline: 2px solid rgba(180, 189, 255, .55); outline-offset: 2px; }
+
+/* ---------- Spotlight ring around the feature ---------- */
+.driver-active .driver-active-element {
+  box-shadow: 0 0 0 2px rgba(124, 140, 255, .95), 0 0 0 7px rgba(91, 108, 240, .28);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ok-progress i, .ok-tip .driver-popover-footer-btn { transition: none; }
+}

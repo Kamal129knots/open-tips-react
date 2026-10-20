@@ -1,0 +1,21 @@
+{
+  "name": "open-feature-tips",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "OPEN dashboard with Driver.js feature tips: unseen tips open automatically, Next and Dismiss, Replay from the help menu",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "driver.js": "1.9.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "5.2.0",
+    "vite": "7.3.6"
+  }
+}
